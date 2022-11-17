@@ -1,0 +1,28 @@
+{% extends 'header.html' %}
+{% block content%}
+<h3>Prediction using plain Sequential + OneHotEncoder</h2>
+  <br>
+  <form method="post" enctype="multipart/form-data" action="predictImage">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label class="form-label" for="fname">Upload Image File Here:</label>
+      <input class="formControl" name="filePath" type="file"><br><br>
+    </div>
+    <br>
+    <input type="submit" value="Submit"></div>
+    <!-- <img src={{filePathName}}>
+        {{filePathName}}
+        -->
+  </form>
+  <div class="container">
+      <div class="row">
+          <h4>Results:</h4>
+          <span>{{predictedLabel}}</span>      
+          <span>
+              <img src={{filePathName}}>
+          </span>
+      </div>
+
+  </div>
+  <br>
+  {% endblock %}
